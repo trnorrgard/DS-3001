@@ -1,10 +1,13 @@
 library(tidyverse)
+library(dplyr)
+library(ggplot2)
 
 # read in data and create dataframe (df1)
-df <- read_csv("data-summary.csv")
+df <- read_csv("week-11-reinforcement-lab/data-summary.csv")
 df1 <- select(df,main_colors,opp_colors,on_play,num_turns,won)
 
 # feature engineering (cora,corc)
+
 df2 <- select(df,"deck_Adeline, Resplendent Cathar":"deck_Wrenn and Seven")
 mat = data.matrix(df2)
 vec1 <- vector()
